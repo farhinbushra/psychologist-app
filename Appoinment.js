@@ -25,7 +25,7 @@ function Appointment() {
       {/* Soft navigation for user */}
       <p style={{ marginTop: "20px" }}>
         Want to feel confident?{" "}
-        <Link to="/testimonial">See patient reviews
+        <Link to="/therapist">See patient reviews
          <button>Done</button>
         </Link>
     
