@@ -1,0 +1,41 @@
+.footer {
+  background: #0f1229;
+  color: #ddd;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.footer-content h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #5b5fc7, #7b80ff);
+-webkit-background-clip: text;
+  color: transparent;
+}
+
+.footer-content p {
+  max-width: 400px;
+  margin: 0 auto 20px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 20px;
+}
+
+.footer-links span {
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.footer-links span:hover {
+  color: #fff;
+}
+
+.footer-content small {
+  color: #777;
+}

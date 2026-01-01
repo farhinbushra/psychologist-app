@@ -1,0 +1,143 @@
+.home {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f6f7ff, #ffffff);
+}
+
+/* HERO */
+.hero {
+  max-width: 1200px;
+  margin: auto;
+  padding: 80px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+/* LEFT TEXT */
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1 {
+  font-size: 52px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero-text h1 span {
+  background: linear-gradient(90deg, #5b5fc7, #7b80ff);
+ -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero-text p {
+  font-size: 18px;
+  color: #555;
+  max-width: 500px;
+  margin-bottom: 35px;
+}
+
+/* BUTTONS */
+.hero-actions {
+  display: flex;
+  gap: 20px;
+}
+
+.primary-btn {
+  padding: 14px 26px;
+  background: #5b5fc7;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.primary-btn:hover {
+  background: #4549b5;
+}
+
+.secondary-btn {
+  padding: 14px 26px;
+  background: transparent;
+  border: 2px solid #5b5fc7;
+  color: #5b5fc7;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.secondary-btn:hover {
+  background: #eef0ff;
+}
+
+/* RIGHT IMAGE */
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.image-box {
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #5b5fc7, #8f94ff);
+  position: relative;
+}
+
+.image-box::after {
+  content: "";
+  position: absolute;
+  inset: 20px;
+  background: white;
+  border-radius: 50%;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-image {
+    margin-top: 40px;
+  }
+}
+/* ANIMATIONS */
+@keyframes slideFadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideFadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* APPLY ANIMATION */
+.hero-text {
+  animation: slideFadeLeft 1s ease forwards;
+}
+
+.hero-image {
+  animation: slideFadeRight 1s ease forwards;
+}
