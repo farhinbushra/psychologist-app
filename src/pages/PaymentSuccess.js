@@ -1,5 +1,5 @@
 import React from "react";
-import "./PaymentSuccess.css";
+
 
 function PaymentSuccess() {
   const handleHome = () => (window.location.href = "/");
