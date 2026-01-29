@@ -1,27 +1,31 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { useEffect, useState } from "react";
-import TherapistList from "./components/TherapistList";
-import AppointmentForm from "./components/AppointmentForm";
-import Testimonial from "./components/Testimonial";
-import AdminPanel from "./components/AdminPanel";
+import Home from "./pages/Home";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+import PaymentSuccess from "./pages/PaymentSuccessFixed";
+import Therapist from "./components/Therapist";
+import Testimonial from"./components/Testimonial";
+import Appointment from "./components/Appointment";
+import TherapistRegistration from "./pages/TherapistRegistration";
+import TherapistProfile from "./pages/TherapistProfile";
+
 
 function App() {
-  const [therapists, setTherapists] = useState([]);
-  const [testimonials, setTestimonials] = useState([]);
-
-  useEffect(() => {
-    fetch("http://localhost:5000/therapists").then(r => r.json()).then(setTherapists);
-    fetch("http://localhost:5000/testimonials").then(r => r.json()).then(setTestimonials);
-  }, []);
-
   return (
-    <div>
-      <h1>Psychologist Platform</h1>
-      <TherapistList therapists={therapists} />
-      <AppointmentForm therapists={therapists} />
-      <Testimonial testimonials={testimonials} />
-      <AdminPanel />
-    </div>
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/payment-success" element={<PaymentSuccess />} />
+        <Route path="/therapist" element={<Therapist />} />
+        <Route path="/therapist/:id" element={<TherapistProfile />} />
+        <Route path="/testimonial" element={<Testimonial />} />
+        <Route path="/appointment" element={<Appointment/>} />
+        <Route path="/therapistregistration" element={<TherapistRegistration/>} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   );
 }
 
