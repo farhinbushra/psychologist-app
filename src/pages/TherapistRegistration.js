@@ -1,6 +1,6 @@
 
 import { useNavigate } from "react-router-dom";
-import "./TherapistRegistration.css";
+
 
 function TherapistRegistration() {
   const navigate = useNavigate();
